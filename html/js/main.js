@@ -6,7 +6,8 @@
  *################# 
  */
 $(document).ready(function () {
-
+    
+    /*########## accordion toggle icon function ##########*/
     function toggleIcon(e) {
         $(e.target)
                 .prev('.panel-heading')
@@ -15,6 +16,9 @@ $(document).ready(function () {
     }
     $('.panel-group').on('hidden.bs.collapse', toggleIcon);
     $('.panel-group').on('shown.bs.collapse', toggleIcon);
+    /*####### end accordion panel ############*/
+    
+    $(".nav-pills li:first-child").addClass("active");
 
     $('#dg-container').gallery();
     $('.navbar-fixed-top').affix({
@@ -22,45 +26,8 @@ $(document).ready(function () {
             top: 100
         }
     });
-    $("#menu_slide").click(function () {
-        alert("Dfds");
-        $("#navbar").slideToggle('slow');
-    });
-    $('#navbar > ul > li:has(ul)').addClass("has-sub");
-    $('#navbar > ul > li > a').click(function () {
-        var checkElement = $(this).next();
-        $('#navbar li').removeClass('dropdown');
-        $(this).closest('li').addClass('dropdown');
-        if ((checkElement.is('ul')) && (checkElement.is(':visible'))) {
-            $(this).closest('li').removeClass('dropdown');
-            checkElement.slideUp('normal');
-        }
-        if ((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
-            $('#navbar ul ul:visible').slideUp('normal');
-            checkElement.slideDown('normal');
-        }
-        if (checkElement.is('ul')) {
-            return false;
-        } else {
-            return true;
-        }
-    });
-
-    $("#navbar").on("click", function (event) {
-        event.stopPropagation();
-    });
-    $(".dropdown-menu").on("click", function (event) {
-        event.stopPropagation();
-    });
-    $(document).on("click", function (event) {
-        $(".dropdown-menu").slideUp('normal');
-    });
-
-    $(".navbar-header").on("click", function (event) {
-        event.stopPropagation();
-    });
-    $(document).on("click", function (event) {
-        $("#navbar").slideUp('normal');
+    $(".pointer a").click(function(e){
+        e.preventDefault();
     });
 });
 
