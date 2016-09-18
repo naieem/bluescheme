@@ -1044,6 +1044,12 @@ footer {
     color: #000;
 }
 /*-------- responsive----------*/
+/*----------320px-----------*/
+@media (max-width:320px) {
+    .select-wrapper::after {
+        position: absolute !important;
+    }
+}
 /*----------360px-----------*/
 @media (max-width:360px) {
     /*--------slideshow------*/
