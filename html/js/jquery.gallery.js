@@ -9,7 +9,6 @@
  */
 
 (function($, undefined) {
-
     /*
      * Gallery object.
      */
@@ -388,10 +387,12 @@
                 case 'next':
 
                     this.current = this.$rightItm.index();
+                    /* Code By Naieem Mahmud Supto Start */
                     getNumber = this.current + 1;
                     jQuery(".pointer a").removeClass('red');
                     jQuery(".pointer a:nth-child(" + getNumber + ")").addClass('red');
-
+                    /* Code By Naieem Mahmud Supto End */
+                    
                     // current item moves left
                     this.$currentItm.addClass('dg-transition').css(this._getCoordinates('left'));
 
