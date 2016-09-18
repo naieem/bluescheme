@@ -1,26 +1,24 @@
 @charset "utf-8";
-
 /* CSS Document */
-
+/* Importing font family */
 @import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
-/*@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css');*/
+
+/* Text selection styling */
 *::-moz-selection {
     background: #f6b20e none repeat scroll 0 0;
     color: #fff;
 }
-
 ::-moz-selection {
     background: #64bb67;
     color: #fff;
     text-shadow: none;
 }
-
 ::selection {
     background: #64bb67;
     color: #fff;
     text-shadow: none;
 }
+/* Placeholder styling */
 ::-webkit-input-placeholder {
     color:#000;
 }
@@ -158,10 +156,6 @@ header {
     transition: all .5s ease-in-out;
 }
 
-
-/* Button styling goes herer */
-
-
 /*=========
   menu
 ==========*/
@@ -188,7 +182,7 @@ header {
 }
 
 .dropdown .dropdown-toggle::after {
-    content: "ï§";
+    content: "ï?§";
     font-family: fontawesome;
     font-size: 10px;
     font-weight: 400;
@@ -743,7 +737,9 @@ span.cross a{
 }
 .captcha-block>img{
     display: inline;
-    width: 88%;
+    max-width: 88%;
+    float: left;
+    height: 48px;
 }
 .captcha-block{
     padding: 10px 0;
@@ -927,11 +923,9 @@ footer {
     margin-top: 50px;
     color: #a2a3a5;
 }
-
 .copyright p {
-    color: #a2a3a5;
+    color: #d3d4d5;
 }
-
 
 /*-----affix code------*/
 .affix{
@@ -1050,6 +1044,60 @@ footer {
     color: #000;
 }
 /*-------- responsive----------*/
+@media (max-width:360px) {
+    /*--------slideshow------*/
+    .dg-wrapper {
+        width: 86%;
+        margin: 50px auto;
+    }
+    .pointer {
+        left: 10%;
+    }
+    .pointer a{
+        margin: 0;
+    }
+    .dg-next{
+        right: 10%;
+    }
+    .dg-prev{
+        left: 10%;
+    }
+    .slideshow {
+        padding-bottom: 30px;
+    }
+}
+@media(min-width:361px) and (max-width:480px){
+    /*--------slideshow------*/
+    .pointer {
+        position: absolute;
+        left: 35%;
+        top: -5px;
+    }
+    .pointer a{
+        margin: 0;
+        height: 30px;
+        width: 30px;
+        line-height: 29px
+    }
+}
+
+@media(min-width:481px) and (max-width:767px){
+    /*--------slideshow------*/
+    .pointer {
+        position: absolute;
+        left: 35%;
+        top: -5px;
+    }
+    .pointer a{
+        margin: 0;
+    }
+    .delivery-single {
+        padding: 20px;
+        text-align: center;
+        float: left;
+        width: 50%;
+    }
+}
 
 @media (max-width:767px) {
     /*-------- Navigation-------*/
@@ -1066,7 +1114,7 @@ footer {
         font-size: 18px;
         width: 100%;
         margin-bottom: 0;
-        line-height: 20px;
+        line-height: 30px;
     }
     .menu_bar {
         width: 100%;
@@ -1117,6 +1165,9 @@ footer {
         padding-left: 20px;
         padding-right: 20px;
     }
+    .contact-info-left hr {
+        border-color: transparent;
+    }
     .half{
         width: 100%;
     }
@@ -1124,6 +1175,10 @@ footer {
     }
     .half input {
         width: 100%;
+    }
+    .block {
+        float: left;
+        margin-left: 10px;
     }
     /*--------Tabs----------*/
     .nav-pills > li {
@@ -1164,6 +1219,9 @@ footer {
         display: block;
         padding-bottom: 20px;
     }
+    .select_service{
+        margin-left:3px !important;
+    }
     .select-wrapper::after {
         top: 8px;
         position: relative;
@@ -1192,33 +1250,14 @@ footer {
         display: block;
         width: 100%;
     }
-    /*--------slideshow------*/
-    .dg-wrapper {
-        width: 86%;
-        margin: 50px auto;
-    }
-    .pointer {
-        left: 10%;
-    }
-    .pointer a{
-        margin: 0;
-    }
-    .dg-next{
-        right: 10%;
-    }
-    .dg-prev{
-        left: 10%;
-    }
-    .slideshow {
-        padding-bottom: 30px;
-    }
+
     /*-----------faq tabs----*/
     .faq-tab h4 {
         font-size: 16px;
     }
     .faq-tab .panel-title a {
-        padding-left:0px;
-        line-height: 20px;
+        padding-left:10px;
+        line-height: 40px;
     }
     .faq-tab .panel-collapse {
         padding-left: 0;
@@ -1233,6 +1272,18 @@ footer {
 }
 
 @media (min-width:768px) and (max-width:991px) {
+    /*--------slideshow------*/
+    .pointer {
+        position: absolute;
+        left: 36%;
+        top: -5px;
+    }
+    .pointer a{
+        margin: 0;
+    }
+    .slideshow{
+        padding-bottom: 50px;
+    }
     .navbar-fixed-top {
         text-align: center;
         position: relative;
@@ -1242,6 +1293,21 @@ footer {
         float: none;
         width: 55%;
         margin: 0 auto;
+    }
+    .top_banner_bg {
+        min-height: 320px
+    }
+    .contact-info-left{
+        padding: 0;
+        text-align: center;
+    }
+    .contact-info-left hr {
+        border-color: transparent;
+    }
+    .contact-form{
+        float: left;
+        text-align: center;
+        padding:0 15px;
     }
     .select-wrapper:before{
         left: 30px;
@@ -1261,13 +1327,16 @@ footer {
         width: 50%;
         margin: 10px auto;
     }
+    .select_service{
+        margin-left: 175px !important;
+    }
     .top_banner_bg .select_service::before{
         left: 35px;
         top: 4px;
         position: relative;
     }
     .service-single{
-        width: 100% !important;
+        margin-bottom: 40px;
     }
     section{
         padding: 50px 0;
@@ -1283,19 +1352,45 @@ footer {
         display: block;
         width: 100%;
     }
+    .block {
+        float: left;
+        margin-left: 10px;
+    }
+    .TabsPanel h4{
+        text-align: center;
+    }
+    .delivery-single{
+        text-align: center;
+    }
     /*--------Footer--------*/
     .footer{
         text-align: center;
     }
+    .footer-single-coloumn {
+        width: 50%;
+        float: left;
+        min-height: 330px;
+    }
     .faq-tab .panel-title a{
-        padding-left: 0;
+        padding-left:10px;
+        font-size: 20px;
+    }
+    .faq-tab .panel-collapse {
+        padding-left: 54px;
     }
 }
 
 /*----------992px -1200px -----------*/
 
 @media (min-width:992px) and (max-width:1200px) {
+    .captcha-block>img {
+        max-width: 80%;
+    }
     .top_banner_bg form input[type="submit"]{
         margin-top: 20px;
     }
+    .contact-form{
+        padding-right: 15px;
+    }
 }
+
